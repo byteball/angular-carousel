@@ -356,6 +356,9 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach
                         function goToSlide(index, slideOptions) {
                             //console.log('goToSlide', arguments);
                             // move a to the given slide index
+                            if (locked)
+                            	  return;
+                          
                             if (index === undefined) {
                                 index = scope.carouselIndex;
                             }
